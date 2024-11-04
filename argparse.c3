@@ -7,6 +7,17 @@ struct ArgparseOption {
     void* data;
 }
 
+fn int parseOptions (String[] args, ArgparseOption[] options) {
+    foreach (i, arg:args) {
+        io::printn(arg);f (arg[0] == '-') {
+            if (arg[1] == '-') {
+                io::printn("pls let me panik");
+            }
+        }
+    }
+    return 1;
+}
+
 fn int main(String[] args)
 {
     String name;
@@ -28,9 +39,7 @@ fn int main(String[] args)
 
 
     ArgparseOption[*] options = {nameOpt, ageOpt};
+    parseOptions(args, &options);
 
-    foreach (i, arg: args) {
-        io::printn(arg);
-    }
     return 0;
 }
